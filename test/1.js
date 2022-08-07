@@ -7,7 +7,7 @@ function chaythu(){
 }
 
 // object
-var hocvien = {
+hocvien = {
     ten : 'Minh',
     ho : 'Vo',
     tuoi: 21,
@@ -18,8 +18,18 @@ var hocvien = {
         console.log(this.ho + " " + this.ten);
 
 
+    },
+    ahihi :function(){
+        if (this.chieucao/this.nang) {
+            return "ahihi"
+            
+        } else {
+            return "ahuhu";
+            
+        }
+
     }
-    
 
 };
 hocvien.hienthi();
+console.log(hocvien.ahihi());
