@@ -49,3 +49,31 @@ function Sum1() {
     return tong;
 }
 console.log(Sum1(a,b));
+
+
+z = function () {
+    return a + b ;
+}
+console.log(z(a,b));
+
+
+function chao(){
+    var ten = "minh";
+    return function (){
+        console.log("cafe ko " +ten);
+    }
+}
+h = chao();
+h();
+
+
+//contructor
+
+function Monan(t,nl,g) 
+{
+    this.ten  = t;
+    this.nguyenlieu = nl;
+    this.gia = g; 
+}
+var x = new Monan("thit kho", "Trung", "10000")
+console.log(x);
