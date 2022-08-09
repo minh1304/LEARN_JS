@@ -33,3 +33,19 @@ hocvien = {
 };
 hocvien.hienthi();
 console.log(hocvien.ahihi());
+
+// funtion
+
+a=3;
+b=4;
+function Sum(a,b){
+    tong = a+b;
+    console.log("tong 2 so la: ", tong);
+}
+Sum(a,b)
+
+function Sum1() {
+    tong = a+ b;
+    return tong;
+}
+console.log(Sum1(a,b));
