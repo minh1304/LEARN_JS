@@ -2,8 +2,16 @@
     margin: 0;
     padding: 0;
 }
+.card{
+    transition: 0.5s;
+}
 .diqua{
-    margin-top: 100px;
-    transition: 0.4s;
-    opacity: 0;
+
+    /* transform: translate(200px); */
+    animation: sangphai 2s forwards;
+}
+@-webkit-keyframes sangphai{
+    0% {transform: translateX(0px);margin-top: 0;opacity: 1;}
+    50% {transform: translateX(100px);margin-top: 0;opacity: 1;}
+    100% {transform: translateX(200px);margin-top: 100px;opacity: 0;}
 }
