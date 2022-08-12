@@ -2,16 +2,22 @@
     margin: 0;
     padding: 0;
 }
-.card{
-    transition: 0.5s;
+.chieu1{
+    animation: chieu1  2s forwards !important;
 }
-.diqua{
-
-    /* transform: translate(200px); */
-    animation: sangphai 2s forwards;
+@-webkit-keyframes chieu1 {
+    0% {transform: translateX(0px) translateY(0px); }
+    50% {transform: translateX(100px) translateY(200px); }
+    100% {transform: translateX(200px) translateY(200px); } 
 }
-@-webkit-keyframes sangphai{
-    0% {transform: translateX(0px);margin-top: 0;opacity: 1;}
-    50% {transform: translateX(100px);margin-top: 0;opacity: 1;}
-    100% {transform: translateX(200px);margin-top: 100px;opacity: 0;}
+#kcd {
+    animation: chieu2 2s forwards;
+}
+@-webkit-keyframes chieu2 {
+    100% {transform: translateX(0px) translateY(0px); }
+    50% {transform: translateX(100px) translateY(200px); }
+    0% {transform: translateX(200px) translateY(200px); } 
+}
+.ko-dong {
+    animation:none!important;
 }
