@@ -6,3 +6,8 @@
     margin-top: 100px;
     margin-left: 100px;
 }
+.dixuong{
+    transition: 0.4s;
+    margin-top: 100px;
+    opacity: 0;
+}

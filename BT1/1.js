@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded",function(){
     console.log(x1);
     x1.onclick = function(){
         console.log('ban vua click');
+        x1.classList.add('dixuong')
     }
 
 },false)
