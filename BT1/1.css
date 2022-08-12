@@ -2,3 +2,8 @@
     margin: 0;
     padding: 0;
 }
+.diqua{
+    margin-top: 100px;
+    transition: 0.4s;
+    opacity: 0;
+}
