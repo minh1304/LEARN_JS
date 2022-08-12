@@ -1,0 +1,1 @@
+# hiệu ứng animation 1 chiều
