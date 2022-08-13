@@ -26,13 +26,13 @@ li.list-group-item:hover {
 }
 
 
-.tamgiac {
+.declick {
     color: black;
     font-size: 22px;
     transition: 0.4s;
     cursor: pointer;
 }
-.tamgiactrang {
+.mautrang {
     color: white;
 }
 
