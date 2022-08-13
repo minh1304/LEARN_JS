@@ -38,12 +38,11 @@ li.list-group-item:hover {
 
 .motphantu {
     position: relative;
-    float: right;
+    float: left;
     margin-right: 100px;
-
 }
 
-.thanhxanh {background: #3b5998;height: 33px;}
+.thanhxanh {background: #3b5998;height: 33px;padding-left: 600px;}
 .danhsach:after {
     content: "";
     position: absolute;
