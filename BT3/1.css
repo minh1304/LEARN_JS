@@ -8,18 +8,32 @@
     right: -9px;
     top: 33px;
     width: 200px;
+    opacity: 0;
+    transition: 0.4s;
+
+
 }
+.xuathien {
+
+    opacity: 1;
+
+
+
+}
+
 
 .tamgiac {
     color: black;
     font-size: 22px;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .motphantu {
     position: relative;
     float: right;
     margin-right: 100px;
+
 }
 
 .thanhxanh {background: #3b5998;height: 33px;}
