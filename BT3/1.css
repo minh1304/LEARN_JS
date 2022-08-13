@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.danhsach {
+    position: absolute;
+    right: -9px;
+    top: 33px;
+    width: 200px;
+}
+
+.tamgiac {
+    color: black;
+    font-size: 22px;
+    transition: 0.4s;
+}
+
+.motphantu {
+    position: relative;
+    float: right;
+    margin-right: 100px;
+}
+
+.thanhxanh {background: #3b5998;height: 33px;}
+.danhsach:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 8px;
+    width: 0;
+    height: 3px;
+    border: 8px #ffd70000 solid;
+    border-bottom-color: white;
+}
