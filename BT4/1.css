@@ -20,6 +20,7 @@ li.list-group-item:hover {
 .xuathien {
 
     opacity: 1;
+    animation: len 0.3s forwards;
 
 
 
@@ -52,4 +53,9 @@ li.list-group-item:hover {
     height: 3px;
     border: 8px #ffd70000 solid;
     border-bottom-color: white;
+}
+@-webkit-keyframes len
+{
+    from{transform: translateY(200px);opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
 }
