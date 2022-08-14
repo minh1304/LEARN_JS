@@ -14,12 +14,22 @@
 
 .menu {
     background: #80808054;
-    padding: 20px 0px;
+    padding: 41px 0px;
     /* display: block; */
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: 0; */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     font-size: 40px;
     font-weight: bold;
     transition: 0.4s;
+    z-index: 2;
+}
+.nholai {
+    font-size: 20px;
+    padding: 15px 0px;
+}
+.col-2 {
+    padding-top: 10px;
+    display:block;
 }
