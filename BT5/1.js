@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded",function(){
         black.classList.add('len');
         khoito.classList.add('dichphai');
     }
+    black.onclick = function(){
+        black.classList.remove('len');
+        khoito.classList.remove('dichphai');
 
+    }
 
 },false)
