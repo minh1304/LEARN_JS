@@ -30,3 +30,10 @@
     top: 0px;
     left: 0px;
 }
+.quangcao.hienqc {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
