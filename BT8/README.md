@@ -1,1 +1,1 @@
-# hiệu ứng slide như (https://themes.muffingroup.com/be/webdesign/)
+# Viết hiệu ứng slide bằng JS native (https://themes.muffingroup.com/be/webdesign/)
