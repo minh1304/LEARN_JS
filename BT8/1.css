@@ -82,8 +82,23 @@ html,body {
     opacity: 0;
     top: -60%;
 }
+.motslide .nauduoi2 {
+    opacity: 0;
+    top: -60px;
+}
+.motslide .nautren {
+    opacity: 0;
+    right: 0px;
+    top: -14%;
+}
 ul li.active .motslide .nauduoi1{
     animation:nauvao 1s forwards;
+}
+ul li.active .motslide .nauduoi2{
+    animation:nauvao2 1.3s forwards;
+}
+ul li.active .motslide .nautren{
+    animation:nauvao3 1s forwards;
 }
 
 @-webkit-keyframes nauvao
@@ -97,17 +112,32 @@ ul li.active .motslide .nauduoi1{
         opacity: 0.4;
     }
 }
+@-webkit-keyframes nauvao2
+{
+    from{
+        transform: translateX(-100%) translateY(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0) translateY(0);
+        opacity: 0.6;
+    }
+}
+@-webkit-keyframes nauvao3
+{
+    from{
+        transform: translateX(100%) translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0) translateY(0);
+        opacity: 0.6;
+    }
+}
 
 
-.motslide .nauduoi2 {
-    opacity: 0.6;
-    top: -60px;
-}
-.motslide .nautren {
-    opacity: 0.6;
-    right: 0px;
-    top: -14%;
-}
+
+
 .motslide .textnoidung{
 
 width: 30%;
