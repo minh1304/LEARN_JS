@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded",function(){
         var xuLyHienTaiketThucCD = function () {
             // this là phantuhientai
             this.classList.remove('dangxem');
-            this.classList.remove('bienMatKhiAnNext');
+            this.classList.remove('bienMatKhiAnPrev');
             checktrangthai ++;
             if(checktrangthai == 2) {trangthai='dungYen'}
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         var xuLyTiepTheoketThucCD = function () {
             // this là phantuTieptheo
-            this.classList.remove('xuatHienKhiAnNext');
+            this.classList.remove('xuatHienKhiAnPrev');
             this.classList.add('dangxem');
             checktrangthai ++;
             if(checktrangthai == 2) {trangthai='dungYen'}
@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded",function(){
         phanTuHienTai.addEventListener('webkitAnimationEnd', xuLyHienTaiketThucCD);
         phanTuTiepTheo.addEventListener('webkitAnimationEnd', xuLyTiepTheoketThucCD);
         //tạo chuyển động sau khi xác định 
-        phanTuHienTai.classList.add('bienMatKhiAnNext');
-        phanTuTiepTheo.classList.add('xuatHienKhiAnNext');
+        phanTuHienTai.classList.add('bienMatKhiAnPrev');
+        phanTuTiepTheo.classList.add('xuatHienKhiAnPrev');
 
     };
     nutPhai.addEventListener('click', chuyenSlideChoNutPhai);

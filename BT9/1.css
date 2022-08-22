@@ -99,3 +99,37 @@ html, body, #slidewrapper, .slides, .slide ul, .slide ul li, .slide ul li ._1sli
     }
 
 }
+.bienMatKhiAnPrev{
+    animation: ani_2_nguoc 1s forwards;
+
+}
+@-webkit-keyframes ani_2_nguoc {
+    from {
+        transform: scale(1);
+        /* Phóng to 200% */
+        opacity: 1;
+
+    }
+    to {
+        transform: scale(0.7);  
+        opacity: 0;
+    }
+
+}
+.xuatHienKhiAnPrev{
+    animation: ani_1_nguoc 1s forwards;
+
+}
+@-webkit-keyframes ani_1_nguoc{
+    from {
+        transform: scale(2);
+        /* Phóng to 200% */
+        opacity: 0;
+
+    }
+    to { 
+        transform: scale(1);  
+        opacity: 1;
+
+    }
+}
