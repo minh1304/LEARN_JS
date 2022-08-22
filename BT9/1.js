@@ -17,11 +17,30 @@ document.addEventListener("DOMContentLoaded",function(){
         {
             chiSoHientai = 0;  
         }
+
         var phanTuTiepTheo = slides[chiSoHientai];
+
+        var xuLyHienTaiketThucCD = function () {
+            // this là phantuhientai
+            this.classList.remove('dangxem');
+            this.classList.remove('bienMatKhiAnNext');
+        }
+
+        var xuLyTiepTheoketThucCD = function () {
+            // this là phantuTieptheo
+            this.classList.remove('xuatHienKhiAnNext');
+            this.classList.add('dangxem');
+        }
+
+
+
+        //check chuyển động kết thúc 
+        phanTuHienTai.addEventListener('webkitAnimationEnd', xuLyHienTaiketThucCD);
+        phanTuTiepTheo.addEventListener('webkitAnimationEnd', xuLyTiepTheoketThucCD);
         //tạo chuyển động sau khi xác định 
         phanTuHienTai.classList.add('bienMatKhiAnNext');
         phanTuTiepTheo.classList.add('xuatHienKhiAnNext');
-        
+
     };
     nutPhai.addEventListener('click', chuyenSlideChoNutPhai);
 
