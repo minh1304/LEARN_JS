@@ -6,8 +6,16 @@ document.addEventListener("DOMContentLoaded",function(){
         chiSoHientai = 0,
         soLuongSlide =  slides.length;
 
+    var trangthai = 'dungYen';
     //bắt sự kiện click vào nút phải 
-    var chuyenSlideChoNutPhai = function() {
+    var chuyenSlideChoNutPhai = function(){
+        //Để kh bị lag khi click nhiều
+        if(trangthai == 'dangChuyenDong')
+        {
+            return false;
+        }
+        trangthai ='dangChuyenDong';
+        var checktrangthai = 0;
         var phanTuHienTai = slides[chiSoHientai];
         //xác định chỉ số tiếp theo dựa trên hiện tại
         if (chiSoHientai < soLuongSlide - 1){
@@ -24,12 +32,17 @@ document.addEventListener("DOMContentLoaded",function(){
             // this là phantuhientai
             this.classList.remove('dangxem');
             this.classList.remove('bienMatKhiAnNext');
+            checktrangthai ++;
+            if(checktrangthai == 2) {trangthai='dungYen'}
+
         }
 
         var xuLyTiepTheoketThucCD = function () {
             // this là phantuTieptheo
             this.classList.remove('xuatHienKhiAnNext');
             this.classList.add('dangxem');
+            checktrangthai ++;
+            if(checktrangthai == 2) {trangthai='dungYen'}
         }
 
 
