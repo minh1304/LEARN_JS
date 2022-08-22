@@ -18,8 +18,10 @@ document.addEventListener("DOMContentLoaded",function(){
             chiSoHientai = 0;  
         }
         var phanTuTiepTheo = slides[chiSoHientai];
-        console.log(phanTuHienTai);
-        console.log(phanTuTiepTheo);
+        //tạo chuyển động sau khi xác định 
+        phanTuHienTai.classList.add('bienMatKhiAnNext');
+        phanTuTiepTheo.classList.add('xuatHienKhiAnNext');
+        
     };
     nutPhai.addEventListener('click', chuyenSlideChoNutPhai);
 
