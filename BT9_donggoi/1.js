@@ -9,14 +9,81 @@ document.addEventListener("DOMContentLoaded",function(){
     var trangthai = 'dungYen';
 
     function xacDinh2SlideVaChuyenDong(nutnao){
+
+        if(trangthai == 'dangChuyenDong')
+        {
+            return false;
+        }
+        trangthai ='dangChuyenDong';
+        var checktrangthai = 0;
+        var phanTuHienTai = slides[chiSoHientai];
         if (nutnao=="nutTrai")
         {
-            console.log("xử lý code cho nút trái");
+            if (chiSoHientai > 0){
+                chiSoHientai--;
+            }
+            else
+            {   
+                chiSoHientai =  soLuongSlide - 1;  
+            }
 
         }
         else if(nutnao=="nutPhai")
         {
-            console.log("xử lý cho nút phải");
+            if (chiSoHientai < soLuongSlide - 1){
+                chiSoHientai++;
+            }
+            else
+            {
+                chiSoHientai = 0;  
+            }
+        }
+        var phanTuTiepTheo = slides[chiSoHientai];
+        var xuLyHienTaiketThucCD = function () {
+            // this là phantuhientai
+            this.classList.remove('dangxem');
+
+            if(nutnao=="nutTrai")
+            {
+                this.classList.remove('bienMatKhiAnPrev');
+            }
+            else if(nutnao=="nutPhai")
+            {
+                this.classList.remove('bienMatKhiAnNext');
+            }
+
+            checktrangthai ++;
+            if(checktrangthai == 2) {trangthai='dungYen'}
+
+        }   
+        var xuLyTiepTheoketThucCD = function () {
+
+
+            if(nutnao=="nutTrai")
+            {
+                this.classList.remove('xuatHienKhiAnPrev');
+            }
+            else if(nutnao=="nutPhai")
+            {
+                this.classList.remove('xuatHienKhiAnNext');
+            }
+
+            this.classList.add('dangxem');
+            checktrangthai ++;
+            if(checktrangthai == 2) {trangthai='dungYen'}
+        }   
+        phanTuHienTai.addEventListener('webkitAnimationEnd', xuLyHienTaiketThucCD);
+        phanTuTiepTheo.addEventListener('webkitAnimationEnd', xuLyTiepTheoketThucCD);                  
+        if (nutnao=="nutTrai")
+        {
+            phanTuHienTai.classList.add('bienMatKhiAnPrev');
+            phanTuTiepTheo.classList.add('xuatHienKhiAnPrev');
+
+        }
+        else if(nutnao=="nutPhai")
+        {
+            phanTuHienTai.classList.add('bienMatKhiAnNext');
+            phanTuTiepTheo.classList.add('xuatHienKhiAnNext');
         }
     }
 
@@ -26,6 +93,7 @@ document.addEventListener("DOMContentLoaded",function(){
     var chuyenSlideChoNutTrai = function(){
         xacDinh2SlideVaChuyenDong('nutTrai')
     }
+
 
     // //bắt sự kiện click vào nút phải 
     // var chuyenSlideChoNutPhai = function(){
