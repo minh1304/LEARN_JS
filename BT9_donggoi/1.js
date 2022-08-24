@@ -5,39 +5,15 @@ document.addEventListener("DOMContentLoaded",function(){
         slides = document.querySelectorAll('.slides ul li'),
         chiSoHientai = 0,
         soLuongSlide =  slides.length;
-
     var trangthai = 'dungYen';
 
     function xacDinh2SlideVaChuyenDong(nutnao){
 
-        if(trangthai == 'dangChuyenDong')
-        {
-            return false;
-        }
+        if(trangthai == 'dangChuyenDong'){return false;}
         trangthai ='dangChuyenDong';
         var checktrangthai = 0;
         var phanTuHienTai = slides[chiSoHientai];
-        if (nutnao=="nutTrai")
-        {
-            if (chiSoHientai > 0){
-                chiSoHientai--;
-            }
-            else
-            {   
-                chiSoHientai =  soLuongSlide - 1;  
-            }
-
-        }
-        else if(nutnao=="nutPhai")
-        {
-            if (chiSoHientai < soLuongSlide - 1){
-                chiSoHientai++;
-            }
-            else
-            {
-                chiSoHientai = 0;  
-            }
-        }
+        chiSoHientai = (nutnao=="nutTrai") ? (chiSoHientai = (chiSoHientai>0) ? (chiSoHientai - 1) : (soLuongSlide-1)) : (chiSoHientai = (chiSoHientai < soLuongSlide - 1) ? (chiSoHientai+1) : 0);
         var phanTuTiepTheo = slides[chiSoHientai];
         var xuLyHienTaiketThucCD = function () {
             // this là phantuhientai
