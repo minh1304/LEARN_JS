@@ -1,16 +1,11 @@
 document.addEventListener("DOMContentLoaded",function(){
-
     var nutPhai = document.querySelector('.nut b.phai'),
         nutTrai = document.querySelector('.nut b.trai'),
         slides = document.querySelectorAll('.slides ul li'),
         chiSoHientai = 0,
         soLuongSlide =  slides.length;
     var trangthai = 'dungYen';
-
-
-
     function xacDinh2SlideVaChuyenDong(nutnao){
-
         if(trangthai == 'dangChuyenDong'){return false;}
         trangthai ='dangChuyenDong';
         var checktrangthai = 0;
@@ -22,37 +17,17 @@ document.addEventListener("DOMContentLoaded",function(){
             this.classList.remove((nutnao=="nutTrai") ? ('bienMatKhiAnPrev') : ('bienMatKhiAnNext'));
             checktrangthai ++;
             if(checktrangthai == 2) {trangthai='dungYen'}
-
         }   
         var xuLyTiepTheoketThucCD = function () {
-
-
-            // if(nutnao=="nutTrai")
-            // {
-            //     this.classList.remove('xuatHienKhiAnPrev');
-            // }
-            // else if(nutnao=="nutPhai")
-            // {
-            //     this.classList.remove('xuatHienKhiAnNext');
-            // }
             this.classList.remove((nutnao=="nutTrai") ? ('xuatHienKhiAnPrev') :('xuatHienKhiAnNext'));
             this.classList.add('dangxem');
             checktrangthai ++;
-            if(checktrangthai == 2) {trangthai='dungYen'}
+            trangthai = (checktrangthai==2) ? ('dungYen') : trangthai;
         }   
         phanTuHienTai.addEventListener('webkitAnimationEnd', xuLyHienTaiketThucCD);
-        phanTuTiepTheo.addEventListener('webkitAnimationEnd', xuLyTiepTheoketThucCD);                  
-        if (nutnao=="nutTrai")
-        {
-            phanTuHienTai.classList.add('bienMatKhiAnPrev');
-            phanTuTiepTheo.classList.add('xuatHienKhiAnPrev');
-
-        }
-        else if(nutnao=="nutPhai")
-        {
-            phanTuHienTai.classList.add('bienMatKhiAnNext');
-            phanTuTiepTheo.classList.add('xuatHienKhiAnNext');
-        }
+        phanTuTiepTheo.addEventListener('webkitAnimationEnd', xuLyTiepTheoketThucCD);    
+        phanTuHienTai.classList.add(nutnao=="nutTrai" ? 'bienMatKhiAnPrev' : 'bienMatKhiAnNext' );
+        phanTuTiepTheo.classList.add(nutnao=="nutTrai" ? 'xuatHienKhiAnPrev' :  'xuatHienKhiAnNext');     
     }
     var chuyenSlideChoNutPhai = function(){
         xacDinh2SlideVaChuyenDong('nutPhai')
