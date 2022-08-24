@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded",function(){
         soLuongSlide =  slides.length;
     var trangthai = 'dungYen';
 
+
+
     function xacDinh2SlideVaChuyenDong(nutnao){
 
         if(trangthai == 'dangChuyenDong'){return false;}
@@ -16,18 +18,8 @@ document.addEventListener("DOMContentLoaded",function(){
         chiSoHientai = (nutnao=="nutTrai") ? (chiSoHientai = (chiSoHientai>0) ? (chiSoHientai - 1) : (soLuongSlide-1)) : (chiSoHientai = (chiSoHientai < soLuongSlide - 1) ? (chiSoHientai+1) : 0);
         var phanTuTiepTheo = slides[chiSoHientai];
         var xuLyHienTaiketThucCD = function () {
-            // this là phantuhientai
             this.classList.remove('dangxem');
-
-            if(nutnao=="nutTrai")
-            {
-                this.classList.remove('bienMatKhiAnPrev');
-            }
-            else if(nutnao=="nutPhai")
-            {
-                this.classList.remove('bienMatKhiAnNext');
-            }
-
+            this.classList.remove((nutnao=="nutTrai") ? ('bienMatKhiAnPrev') : ('bienMatKhiAnNext'));
             checktrangthai ++;
             if(checktrangthai == 2) {trangthai='dungYen'}
 
@@ -35,15 +27,15 @@ document.addEventListener("DOMContentLoaded",function(){
         var xuLyTiepTheoketThucCD = function () {
 
 
-            if(nutnao=="nutTrai")
-            {
-                this.classList.remove('xuatHienKhiAnPrev');
-            }
-            else if(nutnao=="nutPhai")
-            {
-                this.classList.remove('xuatHienKhiAnNext');
-            }
-
+            // if(nutnao=="nutTrai")
+            // {
+            //     this.classList.remove('xuatHienKhiAnPrev');
+            // }
+            // else if(nutnao=="nutPhai")
+            // {
+            //     this.classList.remove('xuatHienKhiAnNext');
+            // }
+            this.classList.remove((nutnao=="nutTrai") ? ('xuatHienKhiAnPrev') :('xuatHienKhiAnNext'));
             this.classList.add('dangxem');
             checktrangthai ++;
             if(checktrangthai == 2) {trangthai='dungYen'}
