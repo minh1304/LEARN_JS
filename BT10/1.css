@@ -2,3 +2,78 @@
     margin: 0;
     padding: 0;
 }
+
+
+html,body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body,html {
+    width: 100%;
+}
+.menutren{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #242527;
+ }
+
+.noidungchinh {
+    margin-top: 63px;
+    height: 100%;
+
+}
+.noidungchinh .trai {float: left;width: 25%;height: 100%;}
+.noidungchinh .giua{
+
+    float: left;
+
+    width: 44%;
+}
+.noidungchinh .phai{
+
+float: left;
+
+width: 25%;
+
+height: 100%;
+
+/* position: fixed; */
+}
+.motkhoi {
+    width: 100%;
+    background: white;
+}
+.motkhoi .avatar{
+    height: 70px;
+    background: green;
+}
+.motkhoi .cacanh{}
+.cacanh img.motanhtren{
+    width: 100%;
+}
+.cacanh ._3anhduoi{
+
+    margin-top: 3px;
+}
+
+.cacanh ._3anhduoi img {
+    width: 33%;
+}
+
+.phai img {
+
+
+    position: fixed;
+    right: 0px;
+}
+
+.trai img {
+    position: fixed;
+    left: 0px
+
+}
+
+
