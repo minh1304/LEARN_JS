@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded",function(){
-    var img = document.querySelectorAll('.cacanh');
+    var img = document.querySelectorAll('.cacanh img'),
+        black = document.querySelector('.black');
     for (var i = 0; i < img.length; i++) {
-        img.addEventListener('click',function(){
+        img[i].addEventListener('click',function(){
             console.log(this);
+            black.classList.add('show')
+
         })
 
         
