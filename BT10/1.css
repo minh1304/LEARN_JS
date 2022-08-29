@@ -4,76 +4,86 @@
 }
 
 
-html,body {
-    overflow-x: hidden;
-    height: 100%;
+html, body {
+    
+height: 100%;
 }
+.menutren {
 
-body,html {
-    width: 100%;
+position: fixed;
+
+top: 0px;
+
+text-align: center;
+
+width: 100%;
+
+background: #242527;
 }
-.menutren{
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    text-align: center;
-    background-color: #242527;
- }
-
-.noidungchinh {
+.noidungchinh{
     margin-top: 63px;
     height: 100%;
-
 }
-.noidungchinh .trai {float: left;width: 25%;height: 100%;}
+.noidungchinh .trai {
+
+float: left;
+
+width: 30%;
+
+height: 101%;
+}
+.trai img {position: fixed;left: 0;}
 .noidungchinh .giua{
 
 float: left;
 
-width: 50%;
+width: 40%;
+
+background: #18191b;
 }
-.noidungchinh .phai{
-
-float: left;
-
-width: 25%;
-
-height: 100%;
-
-/* position: fixed; */
-}
-.motkhoi {
+.motkhoi{
     width: 100%;
-    background: white;
+    margin-left: 8px;
+    /* background: #18191b; */
 }
 .motkhoi .avatar{
+    margin: 10px 10px;
     height: 70px;
-    background: green;
+    /* background: #18191b; */
 }
-.motkhoi .cacanh{}
-.cacanh img.motanhtren{
+.motkhoi .avatar .avaleft{
+    float: left;
+    width: 10%;
+}
+
+.avaleft img {
+    /* font-size: 70px; */
+    width: 70px;
+    border-radius: 50%;
+}
+.motkhoi .avatar .avaright{
+    float: left;
+    color: #e2e3e7;
+    width: 80%;
+}
+.motkhoi .cacanh {}
+.cacanh .motanhtren {
     width: 100%;
 }
-.cacanh ._3anhduoi{
+.cacanh ._3anhduoi {margin-top: 2px;display: flex;}
 
-    margin-top: 3px;
-}
-
-.cacanh ._3anhduoi img {
+._3anhduoi img {
     width: 33%;
+    margin-right: 2px;
 }
-
+.noidungchinh .phai{float: left;width: 30%;}
+.motkhoi img {
+    cursor: pointer;
+}
 .phai img {
-
-
     position: fixed;
-    right: 0px;
+    right: 0;
 }
-
-.trai img {
-    position: fixed;
-    left: 0px
-
+.date {
+    color: #66676b;
 }
-
-
