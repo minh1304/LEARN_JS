@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded",function(){
         black = document.querySelector('.black'),
         info_img = document.querySelector('.info_img'),
         block_img = document.querySelectorAll('.block_img ul li'),
-        thuTuCuaActive = 0,
+        // thuTuCuaActive = 0,
         click_nextImg = document.querySelector('.b_right'),
         // click_previousImg
         close = document.querySelector('.black .close');
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
             var imgClick = this;
             var chiSo = 0 ;
             for(chiSo;imgClick=imgClick.previousElementSibling;chiSo++) {}
-            thuTuCuaActive = chiSo
+
             block_img[chiSo].classList.add('active');
             close.addEventListener('click',function (){
                 black.classList.remove('show');
@@ -30,13 +30,14 @@ document.addEventListener("DOMContentLoaded",function(){
                 info_img.classList.remove('show');
                 block_img[chiSo].classList.remove('active');
             })
-
+            // console.log(thuTuCuaActive);
+            thuTuCuaActive = chiSo
 
         })
   
     }
-    var hienTai2 = thuTuCuaActive;
 
+    console.log(thuTuCuaActive);
     click_nextImg.addEventListener('click',function(){
         close.addEventListener('click',function (){
             black.classList.remove('show');
@@ -49,6 +50,11 @@ document.addEventListener("DOMContentLoaded",function(){
             info_img.classList.remove('show');
             phanTuHientai.classList.remove('active');
         })
+
+        /// 
+        console.log(hienTai2);
+
+
         var phanTuHientai = block_img[hienTai2];
         hienTai2 = (hienTai2 < block_img.length -1) ? hienTai2 + 1 : 0;
         var phantuTiepTheo = block_img[hienTai2];
@@ -56,7 +62,6 @@ document.addEventListener("DOMContentLoaded",function(){
         phantuTiepTheo.classList.add('active');
 
         console.log(phanTuHientai);
-
 
 
 
