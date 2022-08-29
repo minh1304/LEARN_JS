@@ -38,22 +38,25 @@ document.addEventListener("DOMContentLoaded",function(){
     var hienTai2 = thuTuCuaActive;
 
     click_nextImg.addEventListener('click',function(){
-        var phanTuHientai = block_img[hienTai2];
-        hienTai2 = (hienTai2 < block_img.length -1) ? hienTai2 + 1 : 0;
-        var phantuTiepTheo = block_img[hienTai2];
-        phanTuHientai.classList.remove('active');
-        phantuTiepTheo.classList.add('active');
         close.addEventListener('click',function (){
             black.classList.remove('show');
             info_img.classList.remove('show');
-            block_img[phanTuHientai].classList.remove('active');
+            phanTuHientai.classList.remove('active');
         })
         
         black.addEventListener('click',function (){
             black.classList.remove('show');
             info_img.classList.remove('show');
-            block_img[phanTuHientai].classList.remove('active');
+            phanTuHientai.classList.remove('active');
         })
+        var phanTuHientai = block_img[hienTai2];
+        hienTai2 = (hienTai2 < block_img.length -1) ? hienTai2 + 1 : 0;
+        var phantuTiepTheo = block_img[hienTai2];
+        phanTuHientai.classList.remove('active');
+        phantuTiepTheo.classList.add('active');
+
+        console.log(phanTuHientai);
+
 
 
 
