@@ -3,12 +3,26 @@ document.addEventListener("DOMContentLoaded",function(){
         black = document.querySelector('.black'),
         info_img = document.querySelector('.info_img'),
         block_img = document.querySelectorAll('.block_img ul li'),
+
         thuTuCuaActive = 0,
         click_nextImg = document.querySelector('.b_right'),
         // click_previousImg
         close = document.querySelector('.black .close');
     
     console.log(click_nextImg);
+    close.addEventListener('click',function (){
+        black.classList.remove('show');
+        info_img.classList.remove('show');
+        var anhActive = document.querySelector('.block_img ul li.active ');
+        anhActive.classList.remove('active');
+    })
+    
+    black.addEventListener('click',function (){
+        black.classList.remove('show');
+        info_img.classList.remove('show');
+        var anhActive = document.querySelector('.block_img ul li.active ');
+        anhActive.classList.remove('active');
+    })
 
     for (var i = 0; i < img.length; i++) {
         img[i].addEventListener('click',function(){
@@ -19,46 +33,13 @@ document.addEventListener("DOMContentLoaded",function(){
             for(chiSo;imgClick=imgClick.previousElementSibling;chiSo++) {}
 
             block_img[chiSo].classList.add('active');
-            close.addEventListener('click',function (){
-                black.classList.remove('show');
-                info_img.classList.remove('show');
-                block_img[chiSo].classList.remove('active');
-            })
-            
-            black.addEventListener('click',function (){
-                black.classList.remove('show');
-                info_img.classList.remove('show');
-                block_img[chiSo].classList.remove('active');
-            })
-            // console.log(thuTuCuaActive);
             thuTuCuaActive = chiSo;
-            // console.log(thuTuCuaActive);
             return thuTuCuaActive;
 
         })
   
     }
     console.log(thuTuCuaActive);
-
-    click_nextImg.addEventListener('click',function(){
-        close.addEventListener('click',function (){
-            black.classList.remove('show');
-            info_img.classList.remove('show');
-            phanTuHientai.classList.remove('active');
-        })
-        
-        black.addEventListener('click',function (){
-            black.classList.remove('show');
-            info_img.classList.remove('show');
-            phanTuHientai.classList.remove('active');
-        })
-
-        /// 
-
-
-
-    })
-
 
 
 },false)
