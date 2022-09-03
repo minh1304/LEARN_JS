@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         thuTuCuaActive = 0,
         click_nextImg = document.querySelector('.b_right'),
+        click_PreVImg = document.querySelector('.b_left'),
         // click_previousImg
         close = document.querySelector('.black .close');
     
@@ -51,6 +52,24 @@ document.addEventListener("DOMContentLoaded",function(){
         console.log(thuTuCuaHienTai);
 
         thuTuCuaHienTai = (thuTuCuaHienTai < (soLuongAnh- 1) ) ? (thuTuCuaHienTai +1 ): (0);
+        var phanTuTiepTheo = block_img[thuTuCuaHienTai];
+        console.log(thuTuCuaHienTai);
+        phanTuHienTai.classList.remove('active');
+        phanTuTiepTheo.classList.add('active');
+
+
+
+    })
+    click_PreVImg.addEventListener('click',function(){
+
+        console.log(thuTuCuaHienTai);
+        var soLuongAnh = block_img.length;
+        var phanTuHienTai = block_img[thuTuCuaHienTai];
+
+        
+        console.log(thuTuCuaHienTai);
+
+        thuTuCuaHienTai = (thuTuCuaHienTai > 0 ) ? (thuTuCuaHienTai - 1 ): (soLuongAnh- 1);
         var phanTuTiepTheo = block_img[thuTuCuaHienTai];
         console.log(thuTuCuaHienTai);
         phanTuHienTai.classList.remove('active');
