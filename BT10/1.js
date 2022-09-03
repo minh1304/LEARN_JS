@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",function(){
         // click_previousImg
         close = document.querySelector('.black .close');
     
-    console.log(click_nextImg);
+
     close.addEventListener('click',function (){
         black.classList.remove('show');
         info_img.classList.remove('show');
@@ -31,15 +31,22 @@ document.addEventListener("DOMContentLoaded",function(){
             var imgClick = this;
             var chiSo = 0 ;
             for(chiSo;imgClick=imgClick.previousElementSibling;chiSo++) {}
-
-            block_img[chiSo].classList.add('active');
             thuTuCuaActive = chiSo;
-            return thuTuCuaActive;
+            block_img[chiSo].classList.add('active');
+
 
         })
   
     }
     console.log(thuTuCuaActive);
+    click_nextImg.addEventListener('click',function(){
+        var soLuongAnh = block_img.length,
+            thuTuCuaTT = 0;
+        thuTuCuaTT = (thuTuCuaActive < (soLuongAnh- 1) ) ? (thuTuCuaTT +=1 ): (0);
+
+
+
+    })
 
 
 },false)
