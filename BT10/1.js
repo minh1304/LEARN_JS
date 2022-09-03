@@ -38,11 +38,23 @@ document.addEventListener("DOMContentLoaded",function(){
         })
   
     }
-    console.log(thuTuCuaActive);
+
+
+    var thuTuCuaHienTai = thuTuCuaActive;
     click_nextImg.addEventListener('click',function(){
-        var soLuongAnh = block_img.length,
-            thuTuCuaTT = 0;
-        thuTuCuaTT = (thuTuCuaActive < (soLuongAnh- 1) ) ? (thuTuCuaTT +=1 ): (0);
+
+        console.log(thuTuCuaHienTai);
+        var soLuongAnh = block_img.length;
+        var phanTuHienTai = block_img[thuTuCuaHienTai];
+
+        
+        console.log(thuTuCuaHienTai);
+
+        thuTuCuaHienTai = (thuTuCuaHienTai < (soLuongAnh- 1) ) ? (thuTuCuaHienTai +1 ): (0);
+        var phanTuTiepTheo = block_img[thuTuCuaHienTai];
+        console.log(thuTuCuaHienTai);
+        phanTuHienTai.classList.remove('active');
+        phanTuTiepTheo.classList.add('active');
 
 
 
