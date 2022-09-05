@@ -14,12 +14,14 @@
     // console.log(listData);
 
 //Ví dụ với phương thức foreach 
-    var ListNum = [1 , 2 ,3 ,4 ,5 ,9, 10];
-    var ahih = [];
-    ListNum.forEach(value => {
-        if (value %2 ==0 )
-        {
-            ahih.push(value);
-        }
-    });
-    console.log(ahih);
+    // var ListNum = [1 , 2 ,3 ,4 ,5 ,9, 10];
+    // var ahih = [];
+    // ListNum.forEach(value => {
+    //     if (value %2 ==0 )
+    //     {
+    //         ahih.push(value);
+    //     }
+    // });
+    // console.log(ahih);
+
+//Arrow funtion trong object 
