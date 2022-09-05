@@ -25,3 +25,20 @@
     // console.log(ahih);
 
 //Arrow funtion trong object 
+    var student = {
+        name: 'Võ Tuấn Minh',
+        age: 21,
+        getName : function (param) {
+            console.log(param());
+        },
+        getAge : function (param) {
+            console.log(param());
+        },
+        showAll : function() {
+            this.getName(()=>{return "name: " + this.name});
+            this.getAge(()=>{return "age: " + this.age});
+        }
+
+        
+    };
+    student.showAll();
