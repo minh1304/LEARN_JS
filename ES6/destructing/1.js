@@ -6,12 +6,13 @@
     // console.log(b);
     // console.log(c);
 // Matching object 
-    var getobj =() =>{
-        return {        name: "Võ Tuấn Minh",
-        age: 21,
-        id: 19521858,};
+    // var getobj =() =>{
+    //     return {name: "Võ Tuấn Minh",
+    //     age: 21,
+    //     id: 19521858,};
 
-    };
+    // };
 
-    var {name,age,id} = getobj();
-    console.log(name);
+    // var {name,age,id} = getobj();
+    // console.log(name);
+//Parameter Context Matching. (Truyền tham số cho hàm)
