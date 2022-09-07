@@ -31,15 +31,23 @@
 
 
 //Rest params (truyền nhiều phần tử)
-    calculate= (action,... values) =>{
-        let resulf = 0;
-        console.log(values);
-        switch(action){
-            case '+':
-                for(let value of values) resulf+= value;
-                break;
-        }
-        return resulf;
+    // calculate= (action,... values) =>{
+    //     let resulf = 0;
+    //     console.log(values);
+    //     switch(action){
+    //         case '+':
+    //             for(let value of values) resulf+= value;
+    //             break;
+    //     }
+    //     return resulf;
 
-    }
-    console.log(calculate("+",1,2,3,4,6,7));
+    // }
+    // console.log(calculate("+",1,2,3,4,6,7));
+
+
+
+    let ahihi = ["minh", "lan", "hue"];
+    console.log(ahihi.map(value=> {
+        return value.toUpperCase();
+    })
+    ); 

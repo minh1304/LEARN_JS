@@ -28,16 +28,18 @@
     var student = {
         name: 'Võ Tuấn Minh',
         age: 21,
-        getName : function (param) {
+        getName: (param) => {
             console.log(param());
         },
-        getAge : function (param) {
+        getAge:  (param) =>{
             console.log(param());
         },
-        showAll : function() {
+        showAll: function() {
             this.getName(()=>{return "name: " + this.name});
             this.getAge(()=>{return "age: " + this.age});
         }
+
+
 
         
     };
