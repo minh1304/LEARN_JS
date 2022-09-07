@@ -4,11 +4,22 @@
     // var student = {name,age};
     // console.log(student);
 // Computed Property Names
-    var n = "name";
+    // var n = "name";
+    // var student = {
+    //     ["student" + " " + n] : "Võ Tuấn Minh",
+    //     age : 21    
+    // }
+    // for (let index in student) {
+    //     console.log(index + ": " + student[index]);
+    // }
+//Method Properties.
     var student = {
-        ["student" + " " + n] : "Võ Tuấn Minh",
-        age : 21    
+        id: 19521858,
+        fname: "Võ Tuấn",
+        lname: "Minh",
+        fullname: function(){
+            return this.fname +" " + this.lname;
+        }
+
     }
-    for (let index in student) {
-        console.log(index + ": " + student[index]);
-    }
+    console.log(student.fullname());
