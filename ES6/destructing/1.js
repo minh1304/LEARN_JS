@@ -16,3 +16,12 @@
     // var {name,age,id} = getobj();
     // console.log(name);
 //Parameter Context Matching. (Truyền tham số cho hàm)
+    // var logArr =([a,b]) => {
+    //     console.log(a,b);
+    // }
+    // logArr(["Tham Số A -", "- Tham số B"]);
+    var logObj = ({a,b}) =>{
+        console.log(a,b);
+
+    }
+    logObj({a: "Tham số a + " , b: "Tham số b"})
