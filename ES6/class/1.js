@@ -6,21 +6,25 @@ class Employee {
     showInfo(){
         return this.name + ' - ' + this.age;
     }
-    setName(name){
+    set employeeName (name){
         this.name = name;
     }
-    getName(name){
+    get employeeName(){
         return this.name;
     }
-    setAge(age){
+    set employeeAge(age){
         this.age = age;
     }
-    getAge(age)
+    get employeeAge()
     {
         return this.age;
     }
 
 
 }
-let employee = new Employee("Tuấn Minh", 21);
-console.log(employee.showInfo());
+//setter and getter 
+console.log( Employee.employeeName = "Võ Tuấn Minh");
+
+// let employee = new Employee("Tuấn Minh", 21);
+
+// // console.log(employee.showInfo());
