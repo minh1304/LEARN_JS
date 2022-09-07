@@ -25,29 +25,29 @@
     // console.log(ahih);
 
 //Arrow funtion trong object 
-    // var student = {
-    //     name: 'Võ Tuấn Minh',
-    //     age: 21,
-    //     getName: (param) => {
-    //         console.log(param());
-    //     },
-    //     getAge:  (param) =>{
-    //         console.log(param());
-    //     },
-    //     showAll: function() {
-    //         this.getName(()=>{return "name: " + this.name});
-    //         this.getAge(()=>{return "age: " + this.age});
-    //     }
-    // };
-    // student.showAll();
-
-
-
-    let student = {
-        name: "Minh",
-        courses: ["Android", "PHP", "JS"],
-        showInfo: function(){
-            this.courses.forEach(course => console.log(`${this.name} study ${course}`))
+    var student = {
+        name: 'Võ Tuấn Minh',
+        age: 21,
+        getName: (param) => {
+            console.log(param());
+        },
+        getAge:  (param) =>{
+            console.log(param());
+        },
+        showAll(){
+            this.getName(()=>{return "name: " + this.name});
+            this.getAge(()=>{return "age: " + this.age});
         }
-    }
-    student.showInfo();
+    };
+    student.showAll();
+
+
+
+    // let student = {
+    //     name: "Minh",
+    //     courses: ["Android", "PHP", "JS"],
+    //     showInfo(){
+    //         this.courses.forEach(course => console.log(`${this.name} study ${course}`))
+    //     }
+    // }
+    // student.showInfo();
