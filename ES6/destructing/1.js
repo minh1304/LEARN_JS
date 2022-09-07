@@ -20,8 +20,26 @@
     //     console.log(a,b);
     // }
     // logArr(["Tham Số A -", "- Tham số B"]);
-    var logObj = ({a,b}) =>{
-        console.log(a,b);
+    // var logObj = ({a,b}) =>{
+    //     console.log(a,b);
+
+    // }
+    // logObj({a: "Tham số a + " , b: "Tham số b"})
+
+
+
+
+
+//Rest params (truyền nhiều phần tử)
+    calculate= (action,... values) =>{
+        let resulf = 0;
+        console.log(values);
+        switch(action){
+            case '+':
+                for(let value of values) resulf+= value;
+                break;
+        }
+        return resulf;
 
     }
-    logObj({a: "Tham số a + " , b: "Tham số b"})
+    console.log(calculate("+",1,2,3,4,6,7));
