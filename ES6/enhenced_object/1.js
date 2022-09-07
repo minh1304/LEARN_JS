@@ -17,7 +17,7 @@
         id: 19521858,
         fname: "Võ Tuấn",
         lname: "Minh",
-        fullname: function(){
+        fullname(){
             return this.fname +" " + this.lname;
         }
 
