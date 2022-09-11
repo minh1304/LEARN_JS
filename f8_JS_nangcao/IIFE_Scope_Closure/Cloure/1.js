@@ -124,7 +124,7 @@ var getTotalGold = function(sports){
         return a + b.gold;
 
     },0)
-
+    return totoal
 }
 
 
