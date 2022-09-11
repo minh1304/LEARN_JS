@@ -245,9 +245,21 @@ var watchList = [
   ];
   
   var calculateRating = function(watchList){
+        var list_Christopher = watchList.filter(function(film){
+            return film.Director == 'Christopher Nolan';
+        })
+        var total_IMDB = list_Christopher.reduce(function (totall,point){
+            var total = totall+ Number(point.imdbRating ) ;
+            return total;
+
+        },0);
+
+        var result = (total_IMDB / list_Christopher.length);
+        return result
     
   
   }
+
   
   
   // Expected results
