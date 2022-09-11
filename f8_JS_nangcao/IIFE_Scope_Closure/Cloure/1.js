@@ -64,36 +64,69 @@
 // getTotal([4, 5, 3, 5]) // Output: 17
 
 
-var orders = [
-    {
-        name: 'Khóa học HTML - CSS Pro',
-        price: 3000000
-    },
-    {
-        name: 'Khóa học Javascript Pro',
-        price: 2500000
-    },
-    {
-        name: 'Khóa học React Pro',
-        price: 3200000
-    }
-]
-var n_length = orders.length;
+// var orders = [
+//     {
+//         name: 'Khóa học HTML - CSS Pro',
+//         price: 3000000
+//     },
+//     {
+//         name: 'Khóa học Javascript Pro',
+//         price: 2500000
+//     },
+//     {
+//         name: 'Khóa học React Pro',
+//         price: 3200000
+//     }
+// ]
+// var n_length = orders.length;
 
-var getTotal = function(arr){
-    var result = 0;
-    for (i =0; i< n_length; i++)
-    {
-        result += arr[i].price;
-    }
+// var getTotal = function(arr){
+//     var result = 0;
+//     for (i =0; i< n_length; i++)
+//     {
+//         result += arr[i].price;
+//     }
 
-    console.log(result); 
+//     console.log(result); 
     
+
+// }
+
+// // Expected results:
+// // console.log(orders[1].price);
+
+
+// getTotal(orders) // Output: 8700000
+
+
+
+
+var sports = [
+    {
+        name: 'Bơi lội',
+        gold: 11
+    },
+    {
+        name: 'Boxing',
+        gold: 3
+    },
+    {
+        name: 'Đạp xe',
+        gold: 4
+    },
+    {
+        name: 'Đấu kiếm',
+        gold: 5
+    },
+]
+var getTotalGold = function(sports){
+    var totoal = sports.reduce(function(a,b){
+        return a + b.gold;
+
+    },0)
 
 }
 
+
 // Expected results:
-// console.log(orders[1].price);
-
-
-getTotal(orders) // Output: 8700000
+console.log(getTotalGold(sports)) // Output: 23
