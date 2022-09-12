@@ -7,6 +7,11 @@ function render(courses) {
     {
         a.innerHTML += `<li>${courses[index]}</li>` ;
     }
+    Object.assign(a.style, {
+        width: '200px', 
+        height: '200px', 
+        background: 'red'
+    })
     
 }
 
