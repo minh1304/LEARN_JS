@@ -31,7 +31,9 @@ function getCourses(callback){
         })
         .then(callback)
 } 
-
+function createCourse(date){
+    
+}
 
 
 
