@@ -1,11 +1,14 @@
 {
-    "courses": [
-        {
-            "id" : 1,
-            "name": "Kiến thức cơ bản",
-            "description": "lorems ssacascascacascasyhascsccascasurcpaojscoiashcas"
-        }
-
-
-    ]
+  "courses": [
+    {
+      "id": 1,
+      "name": "Kiến thức cơ bản",
+      "description": "lorems ssacascascacascasyhascsccascasurcpaojscoiashcas"
+    },
+    {
+      "name": "học front-end 1",
+      "description": "2 uitcas",
+      "id": 2
+    }
+  ]
 }
