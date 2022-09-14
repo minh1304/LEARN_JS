@@ -40,58 +40,6 @@ var comments = [
 
 
 
-// fake API
-// function getComment() {
-//     return new Promise(resolve => {
-//         setTimeout( () =>{
-//             resolve(comments);
-//         }, 1000)
-//     });
-// }
-// function getusersByID(userIds) {
-//     return new Promise(resolve =>{
-//         var result = users.filter(user =>{
-//             return userIds.includes(user.id)
-
-//         });
-//         setTimeout(() =>{
-//             resolve(result);
-//         },1000)
-
-
-//     });
-
-
-// }
-// getComment()
-//     .then(comments =>{
-//         var userIds = comments.map(comment=>{
-//             return comment.user_id;
-//         });
-//         // console.log(userIds);
-//         return getusersByID(userIds)
-//             .then(users =>{
-//                 return {
-//                     users: users,
-//                     comments: comments,
-//                 }
-//             })
-//     })
-//     .then(data => {
-//         var commentBlock = document.getElementById('comment_block');
-//         var html = '';
-//         data.comments.forEach(comment => {
-//             var user = data.users.find(user=>{
-//                 return user.id === comment.user_id;
-//             });
-//             html += `<li>${user.name}: ${comment.content} </li>`;
-            
-//         });
-//         commentBlock.innerHTML = html;
-//     })
-
-
-
 
 function getComment() {
     return new Promise(resolve =>{
