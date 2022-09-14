@@ -42,19 +42,19 @@ var comments = [
 
 // fake API
 function getComment() {
-    return new Promise(function(resolve) {
-        setTimeout(function() {
+    return new Promise(resolve => {
+        setTimeout( () =>{
             resolve(comments);
         }, 1000)
     });
 }
 function getusersByID(userIds) {
-    return new Promise(function (resolve){
-        var result = users.filter(function(user){
+    return new Promise(resolve =>{
+        var result = users.filter(user =>{
             return userIds.includes(user.id)
 
         });
-        setTimeout(function(){
+        setTimeout(() =>{
             resolve(result);
         },1000)
 
@@ -64,20 +64,20 @@ function getusersByID(userIds) {
 
 }
 getComment()
-    .then(function(comments){
-        var userIds = comments.map(function(comment){
+    .then(comments =>{
+        var userIds = comments.map(comment=>{
             return comment.user_id;
         });
         // console.log(userIds);
         return getusersByID(userIds)
-            .then(function(users){
+            .then(users =>{
                 return {
                     users: users,
                     comments: comments,
                 }
             })
     })
-    .then(function(data) {
+    .then(data => {
         var commentBlock = document.getElementById('comment_block');
         var html = '';
         data.comments.forEach(comment => {
