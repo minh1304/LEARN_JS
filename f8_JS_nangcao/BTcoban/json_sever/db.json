@@ -2,7 +2,7 @@
   "courses": [
     {
       "name": "cascascas",
-      "description": "2 uitcas",
+      "description": "hi",
       "id": 2
     },
     {
@@ -11,39 +11,19 @@
       "id": 10
     },
     {
-      "name": "test 5",
-      "description": " ascascas",
+      "name": "test ahihi",
+      "description": "ascascas",
       "id": 11
     },
     {
-      "name": "casca",
-      "description": "css",
+      "name": "học front-end 2",
+      "description": "2 uitcas 2312",
       "id": 12
     },
     {
-      "name": "casc",
-      "description": "2222",
-      "id": 13
-    },
-    {
-      "name": "casc",
-      "description": "acsca",
-      "id": 14
-    },
-    {
-      "name": "as",
-      "description": "s",
-      "id": 15
-    },
-    {
-      "name": "s",
-      "description": "s",
-      "id": 16
-    },
-    {
-      "name": "2",
-      "description": "2",
-      "id": 17
+      "name": "cascas",
+      "description": "ahihi",
+      "id": 18
     }
   ]
 }

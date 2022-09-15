@@ -16,7 +16,6 @@ var coursesApi = 'http://localhost:3000/courses';
 function start() {
     getCourses(renderCourses);
     handleCreateForm();
-    
 
 }
 start();
@@ -72,6 +71,54 @@ function handleDeleteCourse(id){
         })
 
 }
+//Chức năng cập nhật
+function handleUpdateCourse(id){
+    //lấy course item(li) bỏ vào ô điền
+    var courseItem = document.querySelector('.course-item-'+id);
+    var dataId = {
+        name: courseItem.querySelector('h4').innerText,
+        description: courseItem.querySelector('p').innerText
+    } 
+    document.querySelector('input[name="name"]').value=dataId.name ;
+    document.querySelector('input[name="description"]').value =dataId.description;
+   
+    //Thiết lập Nút update
+    btnUpdate = document.querySelector('#update')
+    btnUpdate.style.visibility = 'visible';
+    btnUpdate.onclick = function(){
+        var Data = {
+            id:id,
+            name: document.querySelector('input[name="name"]').value,
+            description: document.querySelector('input[name="description"]').value
+        }
+        updateCourse(Data);
+    }
+   
+}
+
+function updateCourse(data){
+    var option = {
+        method: 'PATCH', 
+        headers: {
+            'Content-Type': 'application/json'
+          }, 
+        body: JSON.stringify(data) 
+    };
+    fetch (coursesApi+ '/' +data.id,option)
+     .then(function(reponse){ 
+        return reponse.json(); 
+    })
+    .then(function(){
+        clear();
+        document.querySelector('#update').style.visibility = 'hidden'
+        start();
+        
+    });
+}
+
+
+
+//Hết chức năng cập nhật
     
     
 
@@ -84,6 +131,7 @@ function renderCourses(courses){
             <h4>${course.name}</h4>
             <p> ${course.description}</p>
             <button onclick="handleDeleteCourse(${course.id})">Xóa;</button>
+            <button onclick="handleUpdateCourse(${course.id})">Sửa;</button>
 
 
          </li>  
@@ -107,6 +155,9 @@ function handleCreateForm(){
         createCourse(formData,function(){
             getCourses(renderCourses)
         })
+        updateCourse(formData,function(){
+            getCourses(renderCourses)
+        })
     }
 
 
@@ -115,3 +166,9 @@ function clear(){
     document.querySelector('input[name="name"]').value = null
     document.querySelector('input[name="description"]').value = null
 }
+
+
+
+
+
+//Chức năng update
