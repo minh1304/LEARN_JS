@@ -46,6 +46,8 @@ function createCourse(data, callback){
         })
         .then(callback)
 } 
+
+//Chức năng xoa
 function handleDeleteCourse(id){
     var option = {
         method: 'DELETE',
@@ -82,6 +84,8 @@ function renderCourses(courses){
             <h4>${course.name}</h4>
             <p> ${course.description}</p>
             <button onclick="handleDeleteCourse(${course.id})">Xóa;</button>
+
+
          </li>  
         
         `;
@@ -99,11 +103,15 @@ function handleCreateForm(){
             name: name,
             description: description,
         }
+        clear();
         createCourse(formData,function(){
             getCourses(renderCourses)
         })
-    
     }
 
 
+}
+function clear(){
+    document.querySelector('input[name="name"]').value = null
+    document.querySelector('input[name="description"]').value = null
 }
