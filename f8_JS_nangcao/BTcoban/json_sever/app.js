@@ -172,3 +172,19 @@ function clear(){
 
 
 //Chức năng update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 class Employee {
     constructor(name,age){
-        this.name = name;
-        this.age = age;
+        this.name = name
+        this.age = age
     }
     showInfo(){
         return this.name + ' - ' + this.age;
