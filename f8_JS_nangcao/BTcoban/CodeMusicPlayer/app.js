@@ -6,7 +6,8 @@ const heading= $('header h2');
 const cdThumb = $('.cd-thumb');
 const audio = $('#audio');
 const playBtn = $('.btn-toggle-play');
-const player = $('.player')
+const player = $('.player');
+const progress = $('#progress');
 
 const app = {
     currentIndex: 0,
@@ -103,18 +104,38 @@ const app = {
         }
         //Xử lý khi click play 
         playBtn.onclick = function() {
-            if(_this.isPlaying)
-            {
-                _this.isPlaying = false;
+            if(_this.isPlaying) {
                 audio.pause();
-                player.classList.remove('playing');
-
             } 
-            else{
-                _this.isPlaying = true;
+            else {
                 audio.play();
+            }
+
+            audio.onplay =  function() {
+                _this.isPlaying = true;
+
                 player.classList.add('playing');
             }
+            audio.onpause = function() {
+                _this.isPlaying = false;
+
+                player.classList.remove('playing');
+            }
+
+            //Chạy tiến độ bài hát 
+            audio.ontimeupdate = function() {
+                if(audio.duration) {
+                    const progressPercent = Math.floor(audio.currentTime / audio.duration *100)
+                    progress.value = progressPercent;
+                }
+            
+            }
+            //Xử lý khi tua bài hát
+            progress.onchange = function(e) {
+                const seekTime = audio.duration/ 100 * e.target.value;
+                audio.currentTime = seekTime;
+            }
+
 
         }
   
