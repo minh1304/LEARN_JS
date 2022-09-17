@@ -8,6 +8,8 @@ const audio = $('#audio');
 const playBtn = $('.btn-toggle-play');
 const player = $('.player');
 const progress = $('#progress');
+const nextBtn = $('.btn-next');
+const prevBtn = $('.btn-prev');
 
 const app = {
     currentIndex: 0,
@@ -111,6 +113,9 @@ const app = {
             cd.style.opacity = newCdwidth / cdWidth;
 
         }
+
+        
+
         //Xử lý khi click play 
         playBtn.onclick = function() {
             if(_this.isPlaying) {
@@ -147,6 +152,17 @@ const app = {
                 audio.currentTime = seekTime;
             }
 
+            //Nút next bài 
+            nextBtn.onclick = function() {
+                _this.nextSong()
+                audio.play()
+            }
+            //Nút trở về trước 
+            prevBtn.onclick = function() {
+                _this.prevSong()
+                audio.play()
+            } 
+
 
         }
   
@@ -157,6 +173,21 @@ const app = {
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
         audio.src = this.currentSong.path
         console.log(audio);
+    },
+    nextSong: function(){
+        this.currentIndex++;
+        if(this.currentIndex >= this.songs.length) {
+            this.currentIndex =0 ;
+        }
+        this.loadCurrentSong()
+    },
+    prevSong: function() {
+        this.currentIndex--;
+        if(this.currentIndex < 0)
+        {
+            this.currentIndex = this.songs.length -1 ;
+        }
+        this.loadCurrentSong()
     },
     start: function() {
         //Định nghĩa thuộc tính cho object
