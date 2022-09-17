@@ -90,8 +90,17 @@ const app = {
     },
     handelEvent: function() {
         const _this = this;
-
         const cdWidth = cd.offsetWidth; //console({cd})
+
+
+        //Xử lý cdQuay
+        const cdThumbAnimate = cdThumb.animate([
+            { transform: 'rotate(360deg)'}
+        ], {
+            duration: 10000,//10s
+            iterations: Infinity
+        })
+        cdThumbAnimate.pause();
 
 
         //Xử lý phogn1 to thu nhỏ
@@ -115,11 +124,13 @@ const app = {
                 _this.isPlaying = true;
 
                 player.classList.add('playing');
+                cdThumbAnimate.play();
             }
             audio.onpause = function() {
                 _this.isPlaying = false;
 
                 player.classList.remove('playing');
+                cdThumbAnimate.pause();
             }
 
             //Chạy tiến độ bài hát 
