@@ -11,11 +11,13 @@ const progress = $('#progress');
 const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
+const repeatBtn = $('btn-repeat');
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
+    isRepeat: false,
     songs: [
         {
           name: "Click Pow Get Down",
@@ -179,12 +181,25 @@ const app = {
 
             }
             //Phát lại 
-            
+            repeatBtn.onclick = function() {
+                console.log("ahihi");
+                // _this.isRepeat =! _this.isRepeat;
+                // repeatBtn.classList.toggle('active',this.isRepeat);
+
+            }
+
 
 
             //xử lý khi bài hát kết thúc
             audio.onended = function() {
-                nextBtn.click();
+                if(_this.isRepeat) {
+                    audio.play()
+ 
+                }
+                else{
+                    nextBtn.click();
+                }
+
             }
 
         }
