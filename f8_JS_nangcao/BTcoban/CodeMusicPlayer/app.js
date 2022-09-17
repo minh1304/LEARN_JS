@@ -10,10 +10,12 @@ const player = $('.player');
 const progress = $('#progress');
 const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
+const randomBtn = $('.btn-random');
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
+    isRandom: false,
     songs: [
         {
           name: "Click Pow Get Down",
@@ -154,15 +156,36 @@ const app = {
 
             //Nút next bài 
             nextBtn.onclick = function() {
-                _this.nextSong()
+                if(_this.isRandom) {
+                    _this.playRandomSong()
+                }else {
+                    _this.nextSong()
+                }
                 audio.play()
             }
             //Nút trở về trước 
             prevBtn.onclick = function() {
-                _this.prevSong()
+                if(_this.isRandom) {
+                    _this.playRandomSong()
+                }else {
+                    _this.prevSong()
+                }
                 audio.play()
             } 
+            //Khi ấn nút random
+            randomBtn.onclick = function() {
+                _this.isRandom =! _this.isRandom;
+                randomBtn.classList.toggle('active',_this.isRandom );
 
+            }
+            //Phát lại 
+            
+
+
+            //xử lý khi bài hát kết thúc
+            audio.onended = function() {
+                nextBtn.click();
+            }
 
         }
   
@@ -187,6 +210,14 @@ const app = {
         {
             this.currentIndex = this.songs.length -1 ;
         }
+        this.loadCurrentSong()
+    },
+    playRandomSong: function() {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() *this.songs.length)
+        }while(newIndex == this.currentIndex )
+        this.currentIndex = newIndex;
         this.loadCurrentSong()
     },
     start: function() {
