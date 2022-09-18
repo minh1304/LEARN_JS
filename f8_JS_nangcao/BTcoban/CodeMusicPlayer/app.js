@@ -11,6 +11,7 @@ const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
+const playlist = $('.playlist');
 
 const app = {
     currentIndex: 0,
@@ -69,7 +70,7 @@ const app = {
     render: function() {
         const htmls = this.songs.map((song,index) => {
             return `
-            <div class="song ${index === this.currentIndex ? 'active': ''}">
+            <div class="song ${index === this.currentIndex ? 'active': ''}" data-index = "${index}" >
                 <div class="thumb" style="background-image: url('${song.image}')">
                 </div>
                 <div class="body">
@@ -82,7 +83,7 @@ const app = {
             </div>
             `
         })
-        $('.playlist').innerHTML = htmls.join('')
+        playlist.innerHTML = htmls.join('');
     },
     defineProperties: function() {
         Object.defineProperty(this, 'currentSong', {
@@ -185,6 +186,25 @@ const app = {
                 else {
                     nextBtn.click();
                 }
+            }
+
+            //Lắng nghe hành vi clcik vào playlist
+            playlist.onclick = function(e) {
+                //closest trả về chính nó và cha của nó
+                const songNode = e.target.closest('.song:not(.active)');
+                if(songNode || e.target.closest('.option')) {
+                    //xử lý khi click vào song
+                    if(songNode) {
+                        _this.currentIndex = Number(songNode.dataset.index);
+                        _this.loadCurrentSong();
+                        _this.render();
+                        audio.play();
+
+
+                    }
+                    // xử lý khi click vào option
+                }
+
             }
 
 
