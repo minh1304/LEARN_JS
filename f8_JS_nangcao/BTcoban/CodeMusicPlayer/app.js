@@ -154,12 +154,14 @@ const app = {
                 }
                 audio.play();
                 _this.render()
+                _this.scrollToActiveSong()
             }
             //Nút trở về trước 
             prevBtn.onclick = function() {
                 _this.prevSong()
                 audio.play()
                 _this.render()
+                _this.scrollToActiveSong()
             } 
             //random 
             randomBtn.onclick = function() {
@@ -194,6 +196,19 @@ const app = {
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
         audio.src = this.currentSong.path
         console.log(audio);
+    },
+    scrollToActiveSong: function() {
+        setTimeout( () => {
+            //scroll in to view element: khuất màn hình
+            $('.song.active').scrollIntoView( {
+                behavior: 'smooth',
+                block: 'center'
+
+            })
+
+
+        },300)
+
     },
     playRandomSong: function() {
         let newIndex
