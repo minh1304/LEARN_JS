@@ -1,5 +1,22 @@
 //Đối tượng validator
 function Validator(options) {
+    function validate(inputElement, rule) {
+        //value: inputElement.value
+        ///test function: rule.test
+        var errorElement = inputElement.parentElement.querySelector('.form-message');
+        var errMessage = rule.test(inputElement.value);
+        if(errMessage) {
+            errorElement.innerText = errMessage;
+            inputElement.parentElement.classList.add('invalid');
+        }
+        else {
+            errorElement.innerText = '';
+            inputElement.parentElement.classList.remove('invalid');
+        }
+
+
+
+    }
     var formElement = document.querySelector(options.form);
     if(formElement)
     {
@@ -7,20 +24,9 @@ function Validator(options) {
             //lấy đc id: rule.selector
             var inputElement = formElement.querySelector(rule.selector);
             //parentElement: Lấy ra element cha từ element con
-            var errorElement = inputElement.parentElement.querySelector('.form-message');
             if(inputElement) {
                 inputElement.onblur = function() {
-                    //value: inputElement.value
-                    ///test function: rule.test
-                    var errMessage = rule.test(inputElement.value);
-                    if(errMessage) {
-                        errorElement.innerText = errMessage;
-                        inputElement.parentElement.classList.add('invalid');
-                    }
-                    else {
-                        errorElement.innerText = '';
-                        inputElement.parentElement.classList.remove('invalid');
-                    }
+                    validate(inputElement, rule);
                 }
 
             }
