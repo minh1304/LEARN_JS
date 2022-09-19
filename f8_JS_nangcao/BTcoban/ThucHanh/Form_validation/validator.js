@@ -3,7 +3,7 @@ function Validator(options) {
     function validate(inputElement, rule) {
         //value: inputElement.value
         ///test function: rule.test
-        var errorElement = inputElement.parentElement.querySelector('.form-message');
+        var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
         var errMessage = rule.test(inputElement.value);
         if(errMessage) {
             errorElement.innerText = errMessage;
@@ -28,7 +28,7 @@ function Validator(options) {
                 }
                 //Xử lý trường hợp khi người dùng đang nhập 
                 inputElement.oninput = function() {
-                    var errorElement = inputElement.parentElement.querySelector('.form-message');
+                    var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
                     errorElement.innerText = '';
                     inputElement.parentElement.classList.remove('invalid');
                 }
@@ -58,5 +58,14 @@ Validator.isMail = function(selector) {
         }
 
     }
-    
+}
+Validator.minLength = function(selector,min) {
+    return {
+        selector: selector,
+        //Kiểm tra có phải mail  hay kh
+        test: function(value) {
+            return value.length >= min ? undefined : `Vui lòng nhập ít nhất ${min} kí tự`
+        }
+
+    }
 }
