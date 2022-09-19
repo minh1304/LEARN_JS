@@ -29,7 +29,19 @@ function Validator(options) {
     }
     var formElement = document.querySelector(options.form);
     if(formElement)
-    {
+    {   
+        //Khi submit form
+        formElement.onsubmit = function(e) {
+            e.preventDefault();
+
+            //Lặp qua từng rule và validate
+            options.rules.forEach(rule => {
+                var inputElement = formElement.querySelector(rule.selector);
+                validate(inputElement, rule);
+            })
+
+        }
+        //Lặp qua mỗi rule và xử lý blur, input ...
         options.rules.forEach(rule => {
             //Lưu lại các rule cho mỗi input
             if(Array.isArray(selectorRules[rule.selector])) {
@@ -77,7 +89,6 @@ Validator.isMail = function(selector) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
             return regex.test(value) ? undefined : 'Vui lòng nhập đúng email'
         }
-
     }
 }
 Validator.minLength = function(selector,min) {
@@ -87,17 +98,13 @@ Validator.minLength = function(selector,min) {
         test: function(value) {
             return value.length >= min ? undefined : `Vui lòng nhập ít nhất ${min} kí tự`
         }
-
     }
 }
-
 Validator.isConfirmed = function(selector,getConfirmValue,message) {
     return {
         selector: selector,
         test: function(value) {
             return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác'
         }
-
     }
-
 }
