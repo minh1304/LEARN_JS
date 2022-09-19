@@ -50,7 +50,11 @@
         return document.querySelector('#form-1 #password').value;
       }, 'Vui lòng nhập lại đúng mật khẩu'),
 
-    ]
+    ],
+    onSubmit: function(data) {
+        //Call API
+        console.log(data);
+      }
 
 
   });

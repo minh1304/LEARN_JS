@@ -26,6 +26,7 @@ function Validator(options) {
             errorElement.innerText = '';
             inputElement.parentElement.classList.remove('invalid');
         }
+        return !errMessage
     }
     var formElement = document.querySelector(options.form);
     if(formElement)
@@ -33,12 +34,31 @@ function Validator(options) {
         //Khi submit form
         formElement.onsubmit = function(e) {
             e.preventDefault();
+            var isFormValid = true;
 
             //Lặp qua từng rule và validate
             options.rules.forEach(rule => {
                 var inputElement = formElement.querySelector(rule.selector);
-                validate(inputElement, rule);
-            })
+                var isValid = validate(inputElement, rule);
+                if (!isValid){
+                    isFormValid = false;
+                }
+            });
+            if(isFormValid) {
+                //Trường hợp submit vs JS
+                if(typeof options.onSubmit === 'function') {
+                    var enableInputs = formElement.querySelectorAll('[name]');
+                    var formValues = Array.from(enableInputs).reduce((value,input) => {
+                        return (value[input.name] = input.value) &&value;
+                    }, {}) ;
+                    options.onSubmit(formValues);
+                }
+                //Submit mặc định
+                else {
+                    formElement.submit();
+                }
+                
+            }
 
         }
         //Lặp qua mỗi rule và xử lý blur, input ...
