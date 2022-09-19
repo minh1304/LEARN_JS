@@ -1,10 +1,23 @@
 //Đối tượng validator
 function Validator(options) {
+    var selectorRules = {};
+
+
     function validate(inputElement, rule) {
         //value: inputElement.value
         ///test function: rule.test
         var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
-        var errMessage = rule.test(inputElement.value);
+        var errMessage;
+        //Lấy ra các rules của selector
+        var rules  = selectorRules[rule.selector];
+        //Lặp qua từng rule & kiểm tra
+        //Nếu có lỗi thì dừng ngay
+        for (var i = 0; i<rules.length; i++) {
+            errMessage = rules[i](inputElement.value);
+            if(errMessage) break; //vd nhập lại mk có 2 lỗi thì break từ lỗi đầu tiên
+
+        } 
+
         if(errMessage) {
             errorElement.innerText = errMessage;
             inputElement.parentElement.classList.add('invalid');
@@ -18,6 +31,14 @@ function Validator(options) {
     if(formElement)
     {
         options.rules.forEach(rule => {
+            //Lưu lại các rule cho mỗi input
+            if(Array.isArray(selectorRules[rule.selector])) {
+                selectorRules[rule.selector].push(rule.test)
+            } else {
+                selectorRules[rule.selector] = [rule.test]
+            }
+
+
             //lấy đc id: rule.selector
             var inputElement = formElement.querySelector(rule.selector);
             //parentElement: Lấy ra element cha từ element con
