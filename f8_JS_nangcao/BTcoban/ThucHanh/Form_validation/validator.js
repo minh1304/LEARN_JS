@@ -62,10 +62,21 @@ Validator.isMail = function(selector) {
 Validator.minLength = function(selector,min) {
     return {
         selector: selector,
-        //Kiểm tra có phải mail  hay kh
+        //Kiểm tra có nhập đung chưa
         test: function(value) {
             return value.length >= min ? undefined : `Vui lòng nhập ít nhất ${min} kí tự`
         }
 
     }
+}
+
+Validator.isConfirmed = function(selector,getConfirmValue,message) {
+    return {
+        selector: selector,
+        test: function(value) {
+            return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác'
+        }
+
+    }
+
 }

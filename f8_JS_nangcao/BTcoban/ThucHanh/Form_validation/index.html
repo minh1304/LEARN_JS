@@ -45,8 +45,10 @@
       Validator.isRequired('#fullname'),
       Validator.isMail('#email'),
       Validator.minLength('#password',6),
+      Validator.isConfirmed('#password_confirmation',function() {
+        return document.querySelector('#form-1 #password').value;
+      }, 'Vui lòng nhập lại đúng mật khẩu'),
 
-      
     ]
 
 
