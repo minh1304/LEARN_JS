@@ -1,9 +1,9 @@
+import html from './core.js'
 const cars = ['BMW' , 'Porsche' , 'Mercedes']
-const output = `
+const isSuccess = false;
+const output =html`
+    <h1>${false}</h1>
     <ul>
-        ${cars.map(car => `<li>${car} </li>`)}
-    </ul>
-`
+        ${cars.map(car =>`<li>${car} </li>`).join('')}
+    </ul>`
 console.log(output);
-console.log("ahihi");
-console.log(cars);
