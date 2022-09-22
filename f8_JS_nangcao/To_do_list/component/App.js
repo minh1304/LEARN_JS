@@ -1,13 +1,11 @@
-import html from "../core.js";
-import { connect } from "../store.js";
-const connector = connect();
+import html from '../core.js';
+import Header from '../component/Header.js'
 
-function App({cars}) {
+function App() {
     return html`
-        <ul>
-            ${cars.map(car => `<li>${car}</li>`)} 
-        </ul>
-        <button  onclick = "dispatch('ADD','Porsche')">Add car</button>
+        <section class="todoapp">
+            ${Header()}
+        </section>
     `
 }
-export default connector(App)
+export default App
