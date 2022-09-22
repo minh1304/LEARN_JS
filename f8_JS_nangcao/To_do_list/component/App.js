@@ -3,7 +3,6 @@ import Header from '../component/Header.js';
 import TodoList from '../component/TodoList.js';
 import Footer from '../component/Footer.js';
 import { connect } from '../store.js';
-
 function App({todos}) {
     return html`
         <section class="todoapp">
